@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AR&A</title>
+	<link rel="icon" type="image/png" href="img/interfas/ARyA.jpg"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/stile.css">
+</head>
+<body>
+
+	<div id="capaMadre">
+
+		<div class="header">
+			<img src="img/interfas/ARyA.jpg" width="250">
+			<a href="./" class="btn btn-warning btn-info"><</a>
+			<span>
+				<p style="font-size: 40px;">"Arya"</p>
+				<p style="font-size: 30px;">Realidad Aumentada y Autismo</p>
+			</span>
+		</div>
+
+		<div class="markers">
+			<hr style="border-width: 5px">
+			<h2 style="background-color: #000;">Marcadores necesarios para la actividad 1</h2>
+			<div>
+				<img id="m1" src="img/img_marker/ARyA-marker.png">
+				<a href="img/img_marker/ARyA-marker.png" class="btn btn-success" download="ARyA-marker"></a>
+			</div>
+			<div>
+				<img src="img/img_marker/Aguila-marker.png">
+				<a href="img/img_marker/Aguila-marker.png" class="btn btn-success" download="Aguila-marker"></a>
+			</div>
+			<div>
+				<img src="img/img_marker/Ave-marker.png">
+				<a href="img/img_marker/Ave-marker.png" class="btn btn-success" download="Ave-marker"></a>
+			</div>
+			<div>
+				<img src="img/img_marker/Bisonte-marker.png">
+				<a href="img/img_marker/Bisonte-marker.png" class="btn btn-success" download="Bisonte-marker"></a>
+			</div>
+			<div>
+				<img src="img/img_marker/Oso-marker.png">
+				<a href="img/img_marker/Oso-marker.png" class="btn btn-success" download="Oso-marker"></a>
+			</div>
+			<div>
+				<img src="img/img_marker/Tiburon-marker.png">
+				<a href="img/img_marker/Tiburon-marker.png" class="btn btn-success" download="Tiburon-marker"></a>
+			</div>
+			<div>
+				<img src="img/img_marker/Tortuga-marker.png">
+				<a href="img/img_marker/Tortuga-marker.png" class="btn btn-success" download="Tortuga-marker"></a>
+			</div>
+			<hr style="border-width: 5px">
+			<h2 style="background-color: #000;">Marcadores necesarios para la actividad 2</h2>
+			<div>
+				<img id="m1" src="img/img_marker/HR-marker.png">
+				<a href="img/img_marker/HR-marker.png" class="btn btn-success" download="HR-marker"></a>
+			</div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+
+		$(document).ready(function () {
+			function reorient() {
+				if (screen.orientation.angle != 0) {
+					console.log("horizontal");
+					$(".header img").css("width",250*0.5);
+					$(".btn-info").css({"width":120*0.5,"height":120*0.5,"font-size":60*0.5,"border-width": 6*0.5});
+					$(".btn-circle").css({"width":200*0.5,"height":200*0.5,"font-size":40*0.5,"border-width": 6*0.5});
+					$("#capaMadre").css("background-image","url(./img/interfas/figuras-2.jpg)");
+				} else {
+					console.log("vertical");
+					$(".header img").css("width","250");
+					$(".btn-info").css({"width":120,"height":120,"font-size":60,"border-width": 6});
+					$(".btn-circle").css({"width":200,"height":200,"font-size":40,"border-width": 6});
+					$("#capaMadre").css("background-image","url(./img/interfas/figuras.jpg)");
+				}
+			}
+			reorient();
+
+			$(window).resize(function() {
+				reorient();
+			});
+
+		});
+	
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html >
+<html>
+<head>
+	<title>AR&A</title>
+	<link rel="icon" type="image/png" href="img/interfas/ARyA.jpg"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/stile.css">
+</head>
+<body>
+
+	<div id="capaMadre">
+
+		<div class="header">
+			<img src="img/interfas/ARyA.jpg" width="250">
+			<a href="info.html" class="btn btn-warning btn-info">i</a>
+			<span>
+				<p style="font-size: 40px;">"Arya"</p>
+				<p style="font-size: 30px;">Realidad Aumentada y Autismo</p>
+			</span>
+		</div>
+
+		<div class="section">
+			<p cals="p1" style="font-size: 50px;">Selecciona una actividad</p>
+			<a href="Actividades/Actividad-1.html" class="btn btn-warning btn-circle at1"></a>
+			<a href="Actividades/Actividad-2.html" class="btn btn-warning btn-circle at2"></a>
+			<a href="Actividades/Actividad-3.html" class="btn btn-warning btn-circle at3"></a>
+		</div>
+
+
+		<div class="footer">
+			<a href="markers.html" class="btn btn-warning btn-circle bt-mark"></a>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+
+		$(document).ready(function () {
+			function reorient() {
+				if (screen.orientation.angle != 0) {
+					console.log("horizontal");
+					$(".header img").css("width",250*0.5);
+					$(".btn-info").css({"width":120*0.5,"height":120*0.5,"font-size":60*0.5,"border-width": 6*0.5});
+					$(".btn-circle").css({"width":200*0.5,"height":200*0.5,"font-size":40*0.5,"border-width": 6*0.5});
+					$("#capaMadre").css("background-image","url(./img/interfas/figuras-2.jpg)");
+				} else {
+					console.log("vertical");
+					$(".header img").css("width","250");
+					$(".btn-info").css({"width":120,"height":120,"font-size":60,"border-width": 6});
+					$(".btn-circle").css({"width":200,"height":200,"font-size":40,"border-width": 6});
+					$("#capaMadre").css("background-image","url(./img/interfas/figuras.jpg)");
+				}
+			}
+			reorient();
+
+			$(window).resize(function() {
+				reorient();
+			});
+
+		});
+	
+	</script>
+
+</body>
+</html>

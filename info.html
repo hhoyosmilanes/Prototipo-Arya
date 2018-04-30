@@ -1,0 +1,110 @@
+<!DOCTYPE html >
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>AR&A</title>
+	<link rel="icon" type="image/png" href="img/interfas/ARyA.jpg"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/stile.css">
+	<style type="text/css">
+		.btn-img { max-width: 100px; max-height: 100px;}
+		.col-tex { text-align: center; }
+		.row { font-size: 35px; border-top: 1px solid #fff; padding: 20px;}
+		.container { background-color: rgba(0, 0, 0, 0.5); width: 100%; text-align: center; }
+		.bt-descarga { width: 100px; height: 100px;
+			background-image: url(img/interfas/download.png);
+			background-size: 80%;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="capaMadre">
+
+		<div class="header">
+			<img src="img/interfas/ARyA.jpg" width="250">
+			<a href="./" class="btn btn-warning btn-info"><</a>
+			<span>
+				<p style="font-size: 40px;">"Arya"</p>
+				<p style="font-size: 30px;">Realidad Aumentada y Autismo</p>
+			</span>
+		</div>
+
+		<div class="container">
+			<p cals="p1" style="font-size: 30px;">Esta son las instrucciones básicas del prototipo.</p>
+			<div class="row">
+				<div class="col-lg-2 ">
+					<img src="img/interfas/ARyA.jpg" style="border: 1px solid #fff; width: 100px;">
+				</div>
+				<div class="col-lg-10 col-tex">Utiliza el botón con el símbolo < para regresar a la página anterior.</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-2">
+					<a href="#" class="btn btn-warning btn-circle btn-img "><</a>
+				</div>
+				<div class="col-lg-10 col-tex">El botón al final de la pantalla, muestra los elemento (marcadores) necesarios para realizar cada actividad.</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-2">
+					<a href="#" class="btn btn-warning btn-circle at1 btn-img "></a>
+				</div>
+				<div class="col-lg-10 col-tex">Cada botón (1, 2 o 3) lleva a una actividad diferente. Nota: solo la 1 y 2 están en funcionamiento.</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-2">
+					<a href="#" class="btn btn-warning btn-circle bt-mark btn-img "></a>
+				</div>
+				<div class="col-lg-10 col-tex">El botón al final de la pantalla, muestra los elemento (marcadores) necesarios para realizar cada actividad.</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-2">
+					<img id="m1" src="img/img_marker/ARyA-marker.png" style="width: 100px;">
+				</div>
+				<div class="col-lg-10 col-tex">Esto es un marcador, colócalo frente a la cámara para desplegar los elementos tridimensionales.</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-2">
+					<a href="#" class="btn btn-success bt-descarga"></a>
+				</div>
+				<div class="col-lg-10 col-tex">Con este botón puedes descargar el marcador a tu dispositivo para luego visualizarlo en la actividad.</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-12 col-tex">Nota: Descarga e Imprime los marcadores para trabajar mejor. El primer marcador en cada sección, es el marcador principal con que se inicia cada actividad.<br>
+			</div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+
+		$(document).ready(function () {
+			function reorient() {
+				if (screen.orientation.angle != 0) {
+					console.log("horizontal");
+					$(".header img").css("width",250*0.5);
+					$(".btn-info").css({"width":120*0.5,"height":120*0.5,"font-size":60*0.5,"border-width": 6*0.5});
+					$("#capaMadre").css("background-image","url(./img/interfas/figuras-2.jpg)");
+				} else {
+					console.log("vertical");
+					$(".header img").css("width","250");
+					$(".btn-info").css({"width":120,"height":120,"font-size":60,"border-width": 6});
+					$("#capaMadre").css("background-image","url(./img/interfas/figuras.jpg)");
+				}
+			}
+			reorient();
+
+			$(window).resize(function() {
+				reorient();
+			});
+
+		});
+	
+	</script>
+
+</body>
+</html>

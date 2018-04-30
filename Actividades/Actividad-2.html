@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AR&A/ACT-3</title>
+	<link rel="icon" type="image/png" href="../img/interfas/ARyA.jpg"/>
+	<!--load A-frame-->
+	<script src="js/aframe.min.js"></script>
+	<script src="js/aframe-ar.js"></script>
+	<script src="js/aframe-extras.js"></script>
+	<script src='js/aframe-shadow-plane.js'></script>
+	<!--load action-->
+	<script src="js/annyang.min.js"></script>
+	<style type="text/css">
+		.divbt {
+			position: fixed;
+			right: 0px;
+    		top: 0px;
+		    width: 100%;
+		    line-height: 16px;
+		    display: block;
+		    color: #fff;
+		    background-color: rgba(0,0,0,0.5);
+		    text-align: center;
+		}
+	</style>
+</head>
+<body style="margin : 0px; overflow: hidden;">
+	<div class="divbt">
+		<h2 aframe-injected>Movimiento por voz.</h2>
+		<h3 aframe-injected>Dale alguna de estas ordenes al personaje y mira:<br>
+		correr, caminar, saltar, quieto.</h3>
+	</div>
+
+	<a-scene embedded arjs="debugUIEnabled: false;">
+		<!-- position (x z y)-->
+		<a-marker type="pattern" url="patt/HR-pattern.patt">
+			<a-entity
+				id ="bot"
+				cursor-listener
+                scale="1 1 1"
+                position="0 0 0"
+                rotation="0 0 0"
+                animation-mixer="clip: idle"
+				json-model="src: url(models/bot4.json);"
+				shadow='receive: true'>
+				<a-entity shadowonly-plane='width: 3; height: 3; opacity: 0.7'></a-entity>
+			</a-entity>
+		</a-marker>
+
+		<!--Cursor-->
+		<a-entity camera look-controls>
+			<a-cursor id="cursor" sound="src: url(https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg); on: click">
+				<a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.1 0.1 0.1" to="1 1 1" dur="150"></a-animation>
+				<a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" from="1 1 1" to="0.1 0.1 0.1" dur="1500"></a-animation>
+			</a-cursor>
+		</a-entity>
+
+	</a-scene>
+
+	<script type="text/javascript">
+		var bot = document.getElementById("bot");
+		if (annyang) {
+			var comandos = {
+				'quieto': function() {
+					bot.setAttribute("animation-mixer", "clip: idle");
+				},
+				'correr': function() {
+					bot.setAttribute("animation-mixer", "clip: run");
+				},
+				'saltar': function() {
+					bot.setAttribute("animation-mixer", "clip: jump");
+				}
+				,'caminar': function() {
+					bot.setAttribute("animation-mixer", "clip: walk");
+				},
+			};
+			 
+			annyang.addCommands(comandos);
+			 
+			annyang.setLanguage('es-CO');
+			annyang.start();
+		}
+	</script>
+
+</body>
+</html>

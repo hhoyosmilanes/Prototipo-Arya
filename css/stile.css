@@ -1,0 +1,117 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background-color: #555;
+	font-family: Comic Sans MS, sans-serif;
+	color: #fff;
+}
+#capaMadre {
+	max-width: 980px;
+	background-color: #eee;
+	margin: 0 auto;
+	position: relative;
+	height: auto;
+	min-height: 100%;
+	/*height: 100%;*/
+	background: linear-gradient(to bottom right, green, cyan);
+	background-image: url(../img/interfas/figuras.jpg);
+		/*background-repeat: no-repeat;
+		background-attachment: fixed;*/
+	background-size: 100%;
+}
+
+.section {
+	position: absolute;
+	text-align: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 30%;
+    margin: auto;
+}
+.btn-circle {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	margin: 0 10px;
+	font-size: 40px;
+	border: solid 6px #fff;
+	box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.5);
+	background-size: 100%;
+}
+.at1 {
+	background-image: url(../img/interfas/act-1-2.png);
+}
+.at2 {
+	background-image: url(../img/interfas/act-2-2.png);
+}
+.at3 {
+	background-image: url(../img/interfas/act-3-2.png);
+}
+/*----------------------*/
+.header {
+	/*position: absolute;*/
+	top: 0;
+	width: 100%;
+	padding: 30px;
+}
+.header img, .header span {
+	display: inline-block;
+}
+.header > span {
+	vertical-align: bottom;
+}
+.btn-info {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	margin: 0 10px;
+	font-size: 60px;
+	border: solid 6px #fff;
+	text-align: center;
+	box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.5);
+	position: absolute;
+	right: 20px;
+}
+/*----------------------*/
+.footer {
+	position: absolute;
+	bottom: 0;
+	padding: 25px;
+}
+
+.bt-mark {
+	background-image: url(../img/interfas/bt-marker2.png);
+}
+/*-------------------------*/
+.markers {
+	/*position: absolute;*/
+	top: 300px;
+	width: 100%;
+	padding: 0 30px;
+	text-align: center;
+}
+.markers div {
+	display: inline-block;
+	position: relative;
+	width: 280px;
+	height: 280px;
+	margin: 3px;
+}
+.markers div img {
+	width: 100%;
+}
+.markers div a {
+	position: absolute;
+	width: 30%;
+	height: 30%;
+	bottom: 20px;
+	right: 20px;
+	background-image: url(../img/interfas/download.png);
+	background-size: 80%;
+	background-repeat: no-repeat;
+	background-position: center;
+}

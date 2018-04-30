@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AR&A/ACT-1</title>
+	<link rel="icon" type="image/png" href="../img/interfas/ARyA.jpg"/>
+	<!--load A-frame-->
+	<script src="js/aframe.min.js"></script>
+	<script src="js/aframe-ar.js"></script>
+	<script src="js/aframe-extras.js"></script>
+	<!--load action-->
+	<style type="text/css">
+		.divbt {
+			position: fixed;
+			right: 5px;
+    		top: 5px;
+		    width: 100%;
+		    line-height: 16px;
+		    display: block;
+		}
+	</style>
+</head>
+<body style="margin : 0px; overflow: hidden;">
+	<div class="divbt">
+		<h1 aframe-injected>--</h1>
+	</div>
+
+	<a-scene embedded arjs="debugUIEnabled: false;">
+		<!-- position (x z y)-->
+		<a-marker type="pattern" url="patt/HR-pattern.patt">
+			
+		</a-marker>
+
+		<!--Cursor-->
+		<a-entity camera look-controls>
+			<a-cursor id="cursor" sound="src: url(https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg); on: click">
+				<a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.1 0.1 0.1" to="1 1 1" dur="150"></a-animation>
+				<a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" from="1 1 1" to="0.1 0.1 0.1" dur="1500"></a-animation>
+			</a-cursor>
+		</a-entity>
+
+	</a-scene>
+
+</body>
+</html>
